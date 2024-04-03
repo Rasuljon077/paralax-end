@@ -41,15 +41,14 @@ const cards =document.querySelectorAll(".card")
 const info =document.querySelector(".info")
 let a = item.offsetTop - item.clientHeight * 2
 
-console.log(a);
-
-
 // console.log(cards);
+
 window.addEventListener('scroll',()=>{
-   console.log(scrollY);
+  
     if (scrollY > a) {
         cards.forEach(card=>{
-            card.style.transition = "0.5s"
+            let a = card.getAttribute('data-speed')
+            card.style.transition = `${a}ms`
             card.classList.add('active')
         }) 
     }
